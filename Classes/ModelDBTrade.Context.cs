@@ -15,11 +15,17 @@ namespace DemoExamApp.Classes
     
     public partial class TradeEntities : DbContext
     {
+        private static TradeEntities _context; //приватное статичное поле контекст
         public TradeEntities()
             : base("name=TradeEntities")
         {
         }
-    
+        public static TradeEntities GetContext() //метод доступа к контексту
+        {
+            if (_context == null)
+                _context = new TradeEntities();
+            return _context;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

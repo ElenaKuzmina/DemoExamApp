@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoExamApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,21 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DemoExamApp.Classes;
-using DemoExamApp.Pages;
 
-namespace DemoExamApp
+namespace DemoExamApp.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PageListProduct.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageListProduct : Page
     {
-        public MainWindow()
+        public PageListProduct()
         {
             InitializeComponent();
-            ClassFrame.frame = FrmMain;
-            FrmMain.Navigate(new PageListProduct());
+
+            LViewProduct.ItemsSource = TradeEntities.GetContext().Product.ToList();
+            
         }
     }
 }

@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -72,6 +73,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ClassFrame.cs" />
+    <Compile Include="Classes\ConnectHelper.cs" />
     <Compile Include="Classes\ModelDBTrade.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,8 +112,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageListProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\PageListProduct.xaml.cs">
+      <DependentUpon>PageListProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,6 +146,7 @@
       <DependentUpon>ModelDBTrade.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="ProductImage\.DS_Store" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,10 +155,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Resourses\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Classes\ModelDBTrade.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -159,6 +167,17 @@
       <DependentUpon>ModelDBTrade.edmx</DependentUpon>
       <LastGenOutput>ModelDBTrade.cs</LastGenOutput>
     </Content>
+    <Resource Include="ProductImage\2G3280.jpg" />
+    <Resource Include="ProductImage\3L7RCZ.jpg" />
+    <Resource Include="ProductImage\3XBOTN.jpeg" />
+    <Resource Include="ProductImage\BPV4MM.jpg" />
+    <Resource Include="ProductImage\F895RB.jpg" />
+    <Resource Include="ProductImage\JVL42J.jpg" />
+    <Resource Include="ProductImage\MIO8YV.jpg" />
+    <Resource Include="ProductImage\PMEZMH.jpg" />
+    <Resource Include="ProductImage\S72AM3.jpg" />
+    <Resource Include="ProductImage\UER2QD.jpg" />
+    <None Include="Resourses\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
