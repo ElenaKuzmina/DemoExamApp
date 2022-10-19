@@ -39,5 +39,20 @@ namespace DemoExamApp.Pages
                 || x.ProductDescription.Contains(search)
                 || x.ProductCost.ToString().Contains(search)).ToList();
         }
+              
+
+        private void RbUp_Checked(object sender, RoutedEventArgs e)
+        {//сортировка по возрастанию стоимости
+            LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
+                OrderBy(x=>x.ProductCost).ToList();
+        }
+
+        private void RbDown_Checked(object sender, RoutedEventArgs e)
+        {//сортировка по убыванию стоимости
+            LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
+                OrderByDescending(x => x.ProductCost).ToList();
+
+
+        }
     }
 }
