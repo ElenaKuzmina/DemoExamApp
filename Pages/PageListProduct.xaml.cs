@@ -28,5 +28,16 @@ namespace DemoExamApp.Pages
             LViewProduct.ItemsSource = TradeEntities.GetContext().Product.ToList();
             
         }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string search = TxtSearch.Text;
+            if (TxtSearch.Text != null)
+            LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
+                Where(x=>x.ProductManufacturer.Contains(search)
+                || x.ProductName.Contains(search)
+                || x.ProductDescription.Contains(search)
+                || x.ProductCost.ToString().Contains(search)).ToList();
+        }
     }
 }

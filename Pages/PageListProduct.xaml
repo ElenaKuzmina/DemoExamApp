@@ -55,5 +55,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <TextBox Width="130"
+                     Height="30"
+                     Name="TxtSearch"
+                     Margin="5"/>
+            <Button Name="BtnSearch"
+                    Width="130"
+                     Height="30"
+                    Margin="5"
+                    Click="BtnSearch_Click"
+                    Content="Найти/Отменить"/>
+        </StackPanel>
     </Grid>
 </Page>
