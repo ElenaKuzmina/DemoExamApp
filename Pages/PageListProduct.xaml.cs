@@ -26,20 +26,14 @@ namespace DemoExamApp.Pages
             InitializeComponent();
 
             LViewProduct.ItemsSource = TradeEntities.GetContext().Product.ToList();
-            
+            CmbFiltr.Items.Add("Все производители");
+            foreach(var item in TradeEntities.GetContext().Product.
+                Select(x => x.ProductManufacturer).Distinct().ToList())
+                CmbFiltr.Items.Add(item);
+
         }
 
-        private void BtnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            string search = TxtSearch.Text;
-            if (TxtSearch.Text != null)
-            LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
-                Where(x=>x.ProductManufacturer.Contains(search)
-                || x.ProductName.Contains(search)
-                || x.ProductDescription.Contains(search)
-                || x.ProductCost.ToString().Contains(search)).ToList();
-        }
-              
+                   
 
         private void RbUp_Checked(object sender, RoutedEventArgs e)
         {//сортировка по возрастанию стоимости
@@ -53,6 +47,28 @@ namespace DemoExamApp.Pages
                 OrderByDescending(x => x.ProductCost).ToList();
 
 
+        }
+
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {//поиск
+            string search = TxtSearch.Text;
+            if (TxtSearch.Text != null)
+                LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
+                    Where(x => x.ProductManufacturer.Contains(search)
+                    || x.ProductName.Contains(search)
+                    || x.ProductDescription.Contains(search)
+                    || x.ProductCost.ToString().Contains(search)).ToList();
+
+        }
+
+        private void CmbFiltr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {//фильтрация по производителю
+
+            if (CmbFiltr.SelectedValue.ToString() == "Все производители")
+                LViewProduct.ItemsSource = TradeEntities.GetContext().Product.ToList();
+            else
+                LViewProduct.ItemsSource = TradeEntities.GetContext().Product.
+                    Where(x => x.ProductManufacturer == CmbFiltr.SelectedValue.ToString()).ToList();
         }
     }
 }

@@ -57,16 +57,17 @@
         </ListView>
         <StackPanel Orientation="Vertical"
                     VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+                           Width="130"
+                     Height="30"
+                    Margin="5"
+                           HorizontalAlignment="Center"/>
             <TextBox Width="130"
                      Height="30"
                      Name="TxtSearch"
-                     Margin="5"/>
-            <Button Name="BtnSearch"
-                    Width="130"
-                     Height="30"
-                    Margin="5"
-                    Click="BtnSearch_Click"
-                    Content="Найти/Отменить"/>
+                     Margin="5"
+                     TextChanged="TxtSearch_TextChanged"/>
+            
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Margin="10">
@@ -84,6 +85,14 @@
                              Name="RbDown"
                              Checked="RbDown_Checked"/>
             </StackPanel>
+            <TextBlock Text="Фильтр по производителю"
+                           Width="130"
+                     Height="30"
+                    Margin="5"
+                           HorizontalAlignment="Center"/>
+            <ComboBox Name="CmbFiltr"
+                      Margin="5"
+                      SelectionChanged="CmbFiltr_SelectionChanged"/>
         </StackPanel>
     </Grid>
 </Page>
