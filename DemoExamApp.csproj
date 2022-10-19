@@ -167,6 +167,8 @@
       <DependentUpon>ModelDBTrade.edmx</DependentUpon>
       <LastGenOutput>ModelDBTrade.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pages\picture.png" />
+    <Resource Include="Resourses\picture - Копировать.png" />
     <Resource Include="ProductImage\2G3280.jpg" />
     <Resource Include="ProductImage\3L7RCZ.jpg" />
     <Resource Include="ProductImage\3XBOTN.jpeg" />

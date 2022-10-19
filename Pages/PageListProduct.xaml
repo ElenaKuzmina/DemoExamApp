@@ -34,7 +34,7 @@
                             <Image.Source>
                                 <Binding Path="ProductPhoto">
                                     <Binding.TargetNullValue>
-                                        <ImageSource>G:\2022-2023\МДК 02.02\DemoExamApp\Resourses\picture.png</ImageSource>
+                                        <ImageSource>picture.png</ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>

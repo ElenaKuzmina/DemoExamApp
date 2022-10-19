@@ -12,6 +12,6 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Frame Name="FrmMain"
-               Grid.Row="1"/>
+              Grid.Row="1"/>
     </Grid>
 </Window>
